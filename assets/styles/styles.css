@@ -9,13 +9,14 @@
   --main-color: #e5e5e5;
   --second-color: #14213d;
   --yellow-color: #fca311;
+  --bg-color: #898989;
   --font-size-large: 1.5rem;
 }
 
 html,
 body {
   height: 100%;
-  background-color: var(--main-color);
+  background-color: var(--bg-color);
   width: 100vw;
 }
 

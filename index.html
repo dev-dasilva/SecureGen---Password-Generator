@@ -27,12 +27,18 @@
           srcset=""
         />
       </div>
-      <div class="password">
+      <div class="password-wrapper">
         <label for="password">Password Generator</label>
         <div class="input-wrapper">
           <input type="text" name="password" disabled />
-          <i class="fa-regular fa-clipboard"></i>
+          <button class="button-copy">
+            <i class="fa-regular fa-clipboard"></i>
+          </button>
         </div>
+        <button class="generator-button">Generate</button>
+      </div>
+      <div id="alert-message" class="disabled">
+        <p>Password copied!</p>
       </div>
     </main>
     <script src="assets/scripts/script.js"></script>

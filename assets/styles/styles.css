@@ -8,6 +8,7 @@
 :root {
   --main-color: #e5e5e5;
   --second-color: #14213d;
+  --yellow-color: #fca311;
 }
 
 html,
@@ -32,9 +33,12 @@ body {
   width: 100%;
 }
 
-.password {
+.password-wrapper {
+  max-width: 400px;
+  width: 100%;
   display: flex;
   flex-direction: column;
+  align-items: center;
   background-color: var(--second-color);
   padding: 20px;
   border-radius: 5px;
@@ -44,23 +48,72 @@ body {
   -o-border-radius: 5px;
 }
 
-.password label {
+.password-wrapper label {
   color: var(--main-color);
   font-size: 24px;
   margin-bottom: 20px;
 }
 
-.password .input-wrapper input {
+.password-wrapper .input-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0;
+}
+
+.password-wrapper .input-wrapper input {
+  width: 300px;
   height: 30px;
   padding: 5px 10px;
   background-color: var(--main-color);
   color: rgba(0, 0, 0, 0.8);
 }
 
-.password .input-wrapper i {
+.password-wrapper .input-wrapper button.button-copy {
+  background: var(--yellow-color);
+  border: none;
+  outline: none;
+  padding: 3px 5px;
+  border-top-right-radius: 5px;
+}
+
+.password-wrapper .input-wrapper i {
   font-size: 24px;
-  color: var(--main-color);
+  color: var(--second-color);
   vertical-align: sub;
   cursor: pointer;
   padding: 0 3px;
+}
+
+.password-wrapper button.generator-button {
+  width: 200px;
+  padding: 10px;
+  background: var(--yellow-color);
+  border: none;
+  outline: none;
+  color: var(--second-color);
+  font-size: small;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-top: 10px;
+}
+
+.password-wrapper button.generator-button:hover {
+  border: 1px solid #fff;
+}
+
+#alert-message {
+  margin-top: 20px;
+  width: 300px;
+  background-color: var(--second-color);
+}
+
+#alert-message p {
+  padding: 20px;
+  color: var(--main-color);
+  font-weight: bolder;
+  text-align: center;
+}
+
+.disabled {
+  display: none;
 }

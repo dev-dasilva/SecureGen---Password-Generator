@@ -4,6 +4,18 @@ const copyIcon = document.querySelector(".input-wrapper .button-copy i");
 const generatePassword = document.querySelector(".generator-button");
 const alertMessage = document.querySelector("#alert-message");
 
+let passwordLength = 0;
+
+document.querySelector("#select__options").addEventListener("change", () => {
+  passwordLength = this.value;
+  console.log(passwordLength);
+});
+
+let uppercase = /[A-Z]/;
+let lowercase = /[a-z]/;
+let numbers = /\d/;
+let specialChar = /[!@#$%^()_]/;
+
 let characters =
   "çÇaAbBcCdDeEfFgGhHiIkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ0123456789^!$%&/\\|[](){}:;.,*#@<>~´`";
 

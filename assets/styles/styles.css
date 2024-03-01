@@ -11,6 +11,7 @@
   --yellow-color: #fca311;
   --bg-color: #898989;
   --font-size-large: 1.5rem;
+  --font-size-medium: 1rem;
 }
 
 html,
@@ -38,9 +39,11 @@ body {
 .password-wrapper {
   max-width: 25rem;
   width: 100%;
+  min-height: 200px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   background-color: var(--second-color);
   padding: 1.25rem;
   border-radius: 0.3rem;
@@ -91,16 +94,46 @@ body {
   padding: 10px;
   background: var(--yellow-color);
   border: none;
+  border-radius: 10px;
   outline: none;
   color: var(--second-color);
   font-size: small;
   font-weight: bold;
   text-transform: uppercase;
-  margin-top: 10px;
+  margin-top: var(--font-size-large);
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
 }
 
 .password-wrapper button.generator-button:hover {
   border: 1px solid #fff;
+}
+
+.password__options {
+  display: flex;
+  flex-direction: column;
+  margin-top: var(--font-size-large);
+}
+
+.password__options select {
+  min-width: 100px;
+  width: 100%;
+  padding: 8px;
+}
+
+.password__check {
+  margin-top: var(--font-size-large);
+  display: flex;
+  justify-content: space-between;
+}
+
+.password__check li {
+  list-style: none;
+  color: white;
+  font-size: var(--font-size-medium);
+  padding: 2px;
 }
 
 #alert-message {

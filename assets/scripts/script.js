@@ -3,28 +3,31 @@ const copyPassword = document.querySelector(".input-wrapper .button-copy");
 const copyIcon = document.querySelector(".input-wrapper .button-copy i");
 const generatePassword = document.querySelector(".generator-button");
 const alertMessage = document.querySelector("#alert-message");
+const lengthPass = document.querySelector("#select__options");
+const isUppercase = document.querySelector("#check__1");
+const isLowercase = document.querySelector("#check__2");
+const isNumbers = document.querySelector("#check__3");
+const isSpecial = document.querySelector("#check__4");
 
 let passwordLength = 0;
 
-document.querySelector("#select__options").addEventListener("change", () => {
-  passwordLength = this.value;
-  console.log(passwordLength);
+lengthPass.addEventListener("change", (event) => {
+  passwordLength = event.target.value;
 });
 
-let uppercase = /[A-Z]/;
-let lowercase = /[a-z]/;
-let numbers = /\d/;
-let specialChar = /[!@#$%^()_]/;
-
-let characters =
-  "çÇaAbBcCdDeEfFgGhHiIkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ0123456789^!$%&/\\|[](){}:;.,*#@<>~´`";
-
 const passwordGeneration = () => {
-  let passwordLength = 16;
   let newPassword = "";
+
+  const characters =
+    (isUppercase.checked ? "ABCDEFGHIJKLMNOPQRSTUVWXYZ" : "") +
+    (isLowercase.checked ? "abcdefghijklmnopqrstuvwxyz" : "") +
+    (isNumbers.checked ? "0123456789" : "") +
+    (isSpecial.checked ? "!@#$%^()_" : "");
+
   for (let i = 0; i <= passwordLength; i++) {
-    let randomNumbers = Math.floor(Math.random() * characters.length);
-    newPassword += characters.substring(randomNumbers, randomNumbers + 1);
+    newPassword += characters.charAt(
+      Math.floor(Math.random() * characters.length)
+    );
   }
   password.value = newPassword;
 };
